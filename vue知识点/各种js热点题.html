@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .san {
+            width: 0;
+            height: 0;
+            border-width: 20px;
+            border-style: solid;
+            border-color: transparent transparent red transparent
+        }
+    </style>
+</head>
+
+<body>
+    <input value="杨辉三角" type="button" onclick="Pascal(10);" />
+    <div class="san"></div>
+    <div class="box">
+        
+    </div>
+    <ul class='boxa'>
+        <li>1111</li>
+        <li>2222</li>
+        <li>3333</li>
+    </ul>
+    <!-- <div class="container">
+                <h1>Hello word</h1>
+                <div class="header"></div>
+                <div style="padding:1px;"></div>
+           </div> -->
+    <script>
+     console.log(0.1+0.2)
+        //  let div= document.createElement('div')
+        //  div.innerHTML='1111'
+        //  document.body.appendChild(div)
+        //  function createEle(tag){
+
+        // }
+
+
+        // 杨辉三角
+        // function Pascal(lineCount){
+        // //1).创建数组
+        //         let arr = [];   //创建一维数组（用作外层，储存所有数据）
+        //         for(let i=0;i<lineCount;i++){   //lineCount 为变量，用于存储用户输入的行数
+        //             arr[i]=new Array(i+1);   //对每行创建一个长度为i+1的数组，用于存储每行的数据
+        //         }
+
+        //         //2).按照规律进行计算，杨辉三角的规律为：除了每行的第一个数和最后一个数为1外，
+        //         //中间的数为上一行的对应的两个数相加的和。
+        //         for (let i = 0; i < lineCount; i++) {
+        //                 // 计算每个值装进数组中
+        //                 var nbsp = '';
+        //                 for (let j = 0; j <= i; j++) {
+        //                     nbsp += ''
+        //                     if (j == 0 || j == i) {    //每行第1个和最后1个值为1
+        //                         arr[i][j] = 1;
+        //                     } else {
+        //                         arr[i][j] = arr[i - 1][j - 1] + arr[i - 1][j];    //计算和值，本行的值是上1行对应列的数与其前一个数相加的结果
+        //                     }
+        //                     document.write(nbsp+arr[i][j]+"   ");
+        //                 }
+        //                 document.write("<br/> ");
+        //             }
+
+        //         //3).添加空格。每行的空格数为 lineCount- i - 1个，并输出
+        //         for (let i = 0; i < lineCount; i++) {
+        //             // 添加空格
+        //                 var nbsp = '';
+        //                 for (let j = 0; j < lineCount - i - 1; j++) {
+        //                     nbsp += ' ';
+        //                 }
+        //                 console.log(nbsp+arr[i])
+        //             }
+        // }
+
+
+        //  1元7角一分
+        //    class Money{
+        //        constructor(number){
+        //          this.number = number
+        //        }
+        //        static add (one,two) {
+        //           let newNum = one.number+two.number
+        //           let newStr = newNum.toString().split('')
+        //           return `${newStr[0]}元${newStr[1]}角${newStr[2]}分`
+        //        }
+        //        add (two) {
+        //           let newNum = this.number+two.number
+        //           let newStr = newNum.toString().split('')
+        //           return `${newStr[0]}元${newStr[1]}角${newStr[2]}分`
+        //        }
+        //        valueOf () {
+        //           return this.number
+        //        }
+        //        toString () {
+        //           let newStr = this.number.toString().split('')
+        //           return `${newStr[0]}元${newStr[1]}角${newStr[2]}分`
+        //        }
+        //    }
+        //    let one=new Money(120) 
+        //    let two=new Money(51)
+        //    let three = Money.add(one,two)
+        //    //Money.add()说明是Money的静态方法
+        //    let four =one.add(two)
+        //    //one.add()说明是Money的one实例上的方法add
+        //    let five =new Money(one+two)
+        //    console.log(five)
+        //    console.log(`${three}, ${four}, ${five}`)
+
+
+        // 1）青蛙跳台阶，一次只能跳一个台阶或者两个台阶，共十个台阶，有多少种方法
+        //  function jump(results = [], n = 0){ //result放的是符合条件的每一项，n是累加总台阶的基数
+        //     var i = 1;
+        //     while(i < 3) {
+        //         if(n+i <= 10){   
+        //              let _result = [...results]                                         
+        //              _result.push(i)    
+        //            if(n+i === 10){           
+        //                 console.log(_result)   
+        //            }else {
+        //                jump(_result, n+i)
+        //            }         
+        //         }
+        //         i++;
+        //     }
+        //  }
+        //  jump()
+
+
+        // 2）无new实例化===>链式调用
+        // function Person(content){
+        // 	//console.log('Person',Person.prototype)
+        // 	//判断this原型是不是Person
+        // 	if(!Person.prototype.isPrototypeOf(this)){
+        // 		return new Person(content)
+        // 	}
+        // 	this.tasks=[]//对列
+        // 	this.init()
+        // 	setTimeout(()=>{
+        // 		//执行tasks的方法
+        // 		this.runTask()
+        // 	},0)
+        // }
+        // Person.prototype.runTask=async function(){
+        // 	for(let val of this.tasks){
+        // 		await val.task(val.time)
+        // 	}
+        // }
+        // Person.prototype.init=function(){
+        // 	async function task(){
+        // 		console.log('this is li')
+        // 	}
+        // 	this.pushTask({task})
+        // 	return this
+        // }
+        // Person.prototype.unshiftTask=function(fn){
+        // 	this.tasks.unshift(fn)
+        // }
+        // Person.prototype.pushTask=function(fn){
+        // 	this.tasks.push(fn)
+        // }
+        // Person.prototype.eat=function(){
+        // 	async function task(){
+        // 		console.log('eat')
+        // 	}
+        // 	this.pushTask({task})
+        // 	return this
+        // }
+        // Person.prototype.sleep=function(time){
+        // 	async function task(time){
+        // 		await new Promise((resolve,reject)=>{
+        // 			setTimeout(()=>{
+        // 				resolve()
+        // 			},time)
+        // 		})
+        // 		console.log('sleep')
+        // 	}
+        // 	this.pushTask({task,time})
+        // 	return this
+        // }
+        // Person.prototype.sleepFirst=function(time){
+        // 	async function task(time){
+        // 		await new Promise((resolve,reject)=>{
+        // 			setTimeout(()=>{
+        // 				resolve()
+        // 			},time)
+        // 		})
+        // 		console.log('sleepFirst')
+        //     }
+        //     // 将任务放在数组前边
+        // 	this.unshiftTask({task,time})
+        // 	return this
+        // }
+        // Person('li').sleep(5000).eat().sleepFirst(3000)
+        // console.log(Person())
+
+
+
+
+
+        // 3）统计字符串出现的最多次数的字符，统计次数
+        // let str = 'abscdddddffcccddd' 
+        // let strArr = [...str]
+        // let obj = {}
+        // // obj={a:1,b:1,c:1,d:7}
+        // strArr.forEach((item, index) => {
+        //     if(obj[item]){ // 判断是否有值
+        //         // obj[item]是键值
+        //         // console.log(obj[item])
+        //         obj[item]++
+        //     }
+        //     else{
+        //         obj[item] = 1
+        //     }
+        // })
+        // // 获取对象的key数组
+        // let keyArr = Object.keys(obj) // 取键值
+        // let max = null
+        // keyArr.forEach((item, index)=> {
+        //     if(index === 0){
+        //         max = item
+        //     }
+        //     else if(obj[max]<obj[item]){
+        //         max = item
+        //     }
+        // })
+        // // console.log(obj)
+        // console.log(max+'出现的次数是'+obj[max])
+        // console.log(Number(undefined)) //NaN
+        // console.log(Number(null)) //0
+        // console.log(Boolean(undefined)) //false
+
+
+        //括号的匹配
+        //  var stra=' (1+2)+ ((3+5) * 2) )'
+        //  let Fn=(s)=>{
+        //      let leftArr=[]
+        //      let successArr=[]
+        //      for(let i=0;i<s.length;i++){
+        //        if(s[i]=='('){
+        //            leftArr.push(i)
+        //        }
+        //        else if(s[i]==')'){
+        //            if(leftArr.length==0){
+        //              throw new Error(`这个下标为${i}的右括号没有匹配左括号`)
+        //             }
+        //             successArr.push({
+        //                'left':leftArr.pop(),
+        //                'right':i
+        //            })
+        //            console.log(leftArr)
+        //        }
+        //      }
+        //      if(leftArr.length!==0){
+        //          let i=leftArr[0]
+        //         throw new Error(`这个下标为${i}的右括号没有匹配右括号`)
+        //      }
+        //      return  successArr
+        //  }
+        //  console.log(Fn(stra))
+
+
+
+        async function async1() {
+            console.log('async1 start'); //2
+            await async2(); //执行完成跳出async1函数体
+            console.log('async1 end');//7
+        }
+        async function async2() { //3
+            console.log('async2');
+        }
+        console.log('script start'); //1
+        setTimeout(function () {
+            console.log('setTimeout'); //8
+        }, 0)
+        async1();
+        new Promise(function (resolve) {
+            console.log('promise1');//4
+            resolve();//resolve() , 返回一个 Promise 对象，把这个 Promise 压进队列里
+        }).then(function () {
+            console.log('promise2'); //6
+        });
+        console.log('script end'); //5
+
+        // script start
+        // async1 start
+        // async2
+        // promise1
+        // script end
+        // promise2
+        // async1 end
+        // setTimeout
+
+
+
+        // 已知如下数组：
+        // var arr = [ [1, 2, 2], [3, 4, 5, 5], [6, 7, 8, 9, [11, 12, [12, 13, [14] ] ] ], 10];
+        // // 编写一个程序将数组扁平化去并除其中重复部分数据，最终得到一个升序且不重复的数组
+
+        // let newArr=[]
+        // function Fnn(arr){
+        //      if(Array.isArray(arr)){//是数组
+        //         arr.map((item)=>{
+        //             if(Array.isArray(item)){
+        //                  Fnn(item)
+        //             }
+        //             else{
+        //                newArr.push(item)                
+        //             }
+        //         })
+        //      }
+        // }
+        // Fnn(arr)
+        // var n=Array.from(new Set(newArr))
+        // n.sort((a,b)=>{
+        //   return a-b
+        // })
+        // console.log(n)
+
+
+
+        //实现 a=?,if (a == 1 && a == 2 && a == 3) {
+        // console.log('yay');
+        // }
+
+
+        //(1)
+        // let a = {
+        //     i: 1,
+        //     toString: function () {
+        //         return a.i++;
+        //     }
+        // }
+        // if (a == 1 && a == 2 && a == 3) {
+        // console.log('yay');
+        // }
+
+        //(2)
+        // a = [1,2,3];
+        // a.join = a.shift;
+        // console.log(a == 1 && a == 2 && a == 3);
+
+        //(3)
+        // var aﾠ = 1;
+        // var a = 2;
+        // var ﾠa = 3;
+        // if(aﾠ ==1 && a == 2 && ﾠa ==3) {
+        //     console.log("Why hello there!")
+        // }
+
+
+
+        //实现 (5).add(3).minus(2) 功能。例如5+3-2=6
+        //  console.log((5)=>{ 
+        //         function add (3){
+
+        //      }
+        //  })
+        // compose()
+
+
+        var a = new Object();
+        a.value = 1;
+        b = a; 
+       
+        b.value = 2;
+        console.log(b)
+        console.log(a)
+        alert(a.value);
+
+
+
+        box=[...document.querySelectorAll(".boxa li")]
+        // box.map((item,i)=>{
+        //     item.onclick=()=>{
+        //        console.log(i)
+        //     }
+        // })
+var time=new Date('2014-04-23 18:55:49:123');
+   console.log(time.getTime())
+      
+    </script>
+</body>
+
+</html>

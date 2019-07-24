@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <a href="javascript:;" data-to='/'>首页</a>
+        <a href="javascript:;" data-to="/index">index</a>
+        <a href="javascript:;" data-to="/home">home</a>
+        <div id="content"></div>
+    </div>
+    <script>
+        class Router{
+            constructor({routes}){
+                this.routers = routes;
+                this.pushContent()
+                this.init()
+            }
+            init(){
+                window.addEventListener('popstate',this.wraiteHtml.bind(this))
+            }
+            pushContent(){
+                console.log(1)
+                let clickA = document.querySelectorAll('a');
+                [].forEach.call(clickA,val =>{
+                    val.addEventListener('click',()=>{
+                        let toPath = val.getAttribute('data-to');
+                        window.history.pushState({},null, toPath)
+                        this.wraiteHtml()
+                    })
+                })
+            }
+            wraiteHtml(){
+                let resPath = window.location.pathname;
+                let box = document.getElementById("content")
+                let con=this.routers.filter(item=>item.path==resPath)[0].component
+                box.innerHTML=con
+            }
+        }
+        new Router({
+            routes:[{
+                path:'/',
+                component:'首页'
+            },{
+                path:'/index',
+                component:'index'
+            },{
+                path:'/home',
+                component:'home'
+            }]
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+  var a = 123;
+  a = String(a);
+  console.log(a)//123
+
+  var b = 12344;
+  b = b.toString();
+  console.log(b)//1234
+
+   var c = '123abc';
+    c = Number(c);
+    console.log(c);//Nan
+
+
+    var d = '123abc',
+    f = 12.7777;
+    d = parseInt(d);
+    f = parseFloat(f);
+    console.log(d);//123
+    console.log(f);//12.34
+
+
+    var bol=undefined
+    console.log(Boolean(bol))
+
+    console.log(parseInt("09",8))
+
+    console.log(parseInt("010"))
+
+    !function(){alert(1)}() 
+    void function(){alert(2)}() 
+    +function(){alert(3)}() 
+
+    var funName = function(){};
+    funName.prototype.way = function(){
+        alert('这是在funName函数上的原始对象上加了一个way方法，构造函数中用到');
+    }
+    // 调用
+    var funname = new  funName();// 创建对象
+    funname.way();//调用对象属性
+  </script>  
+</body>
+</html>

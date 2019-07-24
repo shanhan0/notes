@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <a href='#/'>首页</a>        
+        <a href='#/index'>index页</a>         
+        <a href='#/home'>home页</a> 
+        <div id="con"></div> 
+    <script>
+         class Router{
+             constructor ({routes}) {
+                this.routes = routes
+                this.pathObj = {}
+                this.init()
+                this.routes.forEach(item => {
+                    this.pathObj[item.path] = function() {
+                         document.getElementById("con").innerHTML=item.component
+                    }
+                });
+             }
+             init(){
+               window.addEventListener('load',this.fun.bind(this))
+               window.addEventListener('hashchange',this.fun.bind(this))
+             }
+             fun(){
+                let hashIndex = window.location.hash.slice(1)
+                this.pathObj[hashIndex]()
+               
+             }
+         }
+
+           new Router({
+                    routes:[{
+                    path: "/",
+                    component: "守业"
+                },{
+                    path: "/index",
+                    component: "index"
+                },{
+                    path: "/home",
+                    component: "home"
+                }]
+           }) 
+       
+    </script>
+</body>
+</html>

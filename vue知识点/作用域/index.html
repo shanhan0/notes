@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+            <a href="#" id="size-12">12</a>
+            <a href="#" id="size-14">14</a>
+            <a href="#" id="size-16">16</a>
+    </div>
+    <video id="player">
+        <!-- <source src="xx.webm" type="video/webm; codecs='vp8, vorbis'"> -->
+        <source src="./movie.ogg" type="video/ogg" controls=true>
+
+    </video>
+    <video src="./movie.ogg" controls="controls"></video>
+    
+     
+
+    <script>
+    // var i = 5
+    // function func () {
+    //     console.log(i)
+    //     if (true) {
+    //         var i = 6
+    //     }
+    // }
+    // func()
+
+
+
+//闭包
+//     function makeFunc() {
+//     var name = "Mozilla";
+//         function displayName() {
+//             alert(name);
+//         }
+//        return displayName;
+//      }
+//     var myFunc = makeFunc();
+//     console.log(myFunc)
+//     myFunc();
+
+
+//     function makeAdder(x) {  //x:5 x:10
+//         return function(y) {
+//             return x + y;
+//         };
+//      }  
+//         var add5 = makeAdder(5);
+//         var add10 = makeAdder(10);
+//         console.log(add5(2));  // 7
+//         console.log(add10(2)); // 12
+
+
+//   //字体大小更改
+//         function makeSizer(size) {
+//             return function() {
+//                 document.body.style.fontSize = size + 'px';
+//             };
+//         }
+//         var size12 = makeSizer(12);
+//         var size14 = makeSizer(14);
+//         var size16 = makeSizer(16);
+//         document.getElementById('size-12').onclick = size12;
+//         document.getElementById('size-14').onclick = size14;
+//         document.getElementById('size-16').onclick = size16;
+
+
+
+//      function arrFun(){
+//          var arr=[]
+//          for(var i=0;i<10;i++){
+//             arr[i]=function(){
+//                 return i
+//             }
+//          }
+//          return arr
+//      }   
+//      console.log(arrFun()[0]())// [ƒ, ƒ, ƒ, ƒ, ƒ, ƒ, ƒ, ƒ, ƒ, ƒ]
+     
+
+//      function arrFuna(){
+//          var arr=[]
+//          for(var i=0;i<10;i++){
+//             arr[i]=function(num){
+//                 return function(){
+//                     return num
+//                 }
+//             }(i)
+//          }
+//          return arr
+//      }   
+//      console.log(arrFuna()[2])
+//      console.log(arrFuna()[2]())//2
+
+
+
+//     function fib(count) {
+//     //参数判断
+//         var count = parseInt(count);
+//         if (isNaN(count) || count < 0) {
+//             return 0;
+//         }
+//         function f(count) {
+//             if (count <= 1)
+//                 return 1;          
+//             return arguments.callee(count - 1) + arguments.callee(count - 2);    //callee是装逼用的，直接用f也行
+//         }
+//     return f(count);   
+//   }
+//   console.log(fib(2))
+
+
+//   var a=1;
+//   var b=function a(x){x && a(...x)};
+//   alert(a)
+
+
+//   if(!(a in window)){var a = 1;}alert(a);
+//   var a=b=3;  //b=3,var a=b
+//   console.log(a,b)
+
+// var str='abdbbdABBB'
+// console.log(str.toLowerCase())  //转小写
+// console.log(str.toUpperCase())
+// console.log(String.fromCharCode(65))
+
+var arr=['aa','bb','aaabbb']
+// let h=arr.map((item)=>{
+//    return item.includes('a')
+// })
+// console.log(h)
+console.log(arr.filter((item)=>{
+  return item.charAt(0)=='a'
+}))
+
+// var arr=[11,33,444,566,788,90,90]
+// console.log(arr.lastIndexOf(444,1))
+
+
+
+</script>
+</body>
+</html>

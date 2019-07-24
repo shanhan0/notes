@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: skyblue;
+            margin: 0 auto;
+            vertical-align: middle;
+        }
+
+        .con {
+            /* text-align: center; */
+            width: 300px;
+            height: 300px;
+            border: 1px solid #f00;
+            /* display: table-cell;
+           vertical-align: middle;
+           text-align: center; */
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <p class="box" title='哈哈，我是图片'></p>
+    </div>
+    <img src="./timg.jpg" alt="图片出错" title='哈哈，我是图片'>
+    <button id='btn'>点击</button>
+    <script>
+        let wake = (time) => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(`${time / 1000}秒后醒来`)
+                }, time)
+                setTimeout(() => {
+                    reject(`失败了`)
+                }, time)
+            })
+        }
+
+        let p1 = wake(3000)
+        let p2 = wake(2000)
+
+        Promise.all([p1, p2]).then((result) => {
+            console.log(result)       // [ '3秒后醒来', '2秒后醒来' ]
+        }).catch((error) => {
+            console.log(error)
+        })
+
+
+        let fn = () => {
+            let obj = {}
+            obj.f = () => {
+                console.log(this)
+            }
+            return obj;
+        }
+        fn().f()
+
+
+        //  function a(x){return x * 2;}; var a; alert(a);       //function a(x){return x * 2;} 
+        //  var a; function a(x){return x * 2;} alert(a);      //fnction a(x){return x * 2;} 
+        //  function a(x){return x * 2;} var a = 1; alert(a);      //1
+        //  var a = 1; function a(x){return x * 2;} alert(a);      //1
+
+        //     let arr=[{
+        //         name:'uc',
+        //         value:2
+        //     },{
+        //         name:'uf',
+        //         value:3
+        //     },{
+        //         name:'ut',
+        //         value:6
+        //     }]
+
+        //    let obj={}
+        //     arr.map((v)=>{
+        //          obj[v.name]={v}
+        //     })
+        //     console.log(obj)
+
+        // let str='2edeefffff'
+        // console.log(str.length)
+        // var a=confirm("是否进行下一题！");  
+        //         if(a){  
+        //                 alert("继续下一题");  
+        //              }
+        //         else{  
+        //                 alert("停止进行答题");  
+        //             }
+        //             var av = prompt('显示的输入框外的提示', '显示的时输入框内的提示');
+        // function DateDemo(){
+        // var d, s="今天日期是：";
+        // d = new Date();
+        // s += d.getMonth()+1 + "/";
+        // s += d.getDate() + "/";
+        // s += d.getFullYear();
+        // console.log(s)
+        // return s;
+        // }
+        // DateDemo()
+
+
+        for (i = 0, j = 0; i < 10, j < 6; i++ , j++) {
+            k = i + j;
+        }
+        console.log(k)
+
+
+        // btn.onclick=function(){
+        //     var name = 'one_name';
+        //     var value = '123';
+        //     var exp = new Date();
+        //     exp.setTime(exp.getTime() + 60 * 2000);//过期时间 2分钟
+
+        //     console.log(name + "=" + escape(value) + ";expires=" + exp.toGMTString());
+
+        // }
+
+        function test1() {
+            this.a = 22;
+            console.log(this)
+            let b = function () {
+                console.log(this.a);
+                console.log(this)
+            };
+            b();
+        }
+        var x = new test1();
+
+        var array = ['白鸽', '麻雀', '大象', '狗', '猫', "鸡"];
+        array = array.sort(function compareFunction(item1, item2) {
+            console.log(item1, item2)
+            return item1.localeCompare(item2);
+        });
+        console.log(array)
+
+
+
+    </script>
+</body>
+
+</html>
