@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+    }
+</style>
+
+<body>
+    <div id="show">
+        <ul></ul>
+    </div>
+    <div>
+        <input type="text" id="sendValue">
+        <button id="send">发送</button>
+
+    </div>
+    <script>
+        const sendValue = document.getElementById("sendValue");
+        const send = document.getElementById("send");
+        const showUl = document.getElementById('show').firstElementChild;
+        send.onclick = function() {
+            const value = sendValue.value;
+            const oLi = document.createElement('li')
+            oLi.innerHTML = value;
+            showUl.appendChild(oLi)
+            oLi.style.textAlign = 'right'
+            oLi.style.color = 'red'
+            ws.send(value)
+        }
+        const ws = new WebSocket("ws://localhost:3100")
+        ws.onmessage = function(msg) {
+            console.log(msg)
+            const message = JSON.parse(msg.data);
+            //ws.send('hello world')
+            if (message.type === "chat") {
+                const oLi = document.createElement('li')
+                oLi.innerHTML = message.data;
+                showUl.appendChild(oLi)
+                oLi.style.textAlign = 'left'
+                oLi.style.color = 'blue'
+                return
+            }
+            if (message.type === 'msg') {
+                confirm(message.data)
+                return
+            }
+            if (message.type === 'num') {
+                alert(`已有${message.data}加入`)
+                return
+            }
+        }
+    </script>
+</body>
+
+</html>
