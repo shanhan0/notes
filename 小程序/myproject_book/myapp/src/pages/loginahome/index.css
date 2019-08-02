@@ -1,0 +1,118 @@
+.index{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.tit{
+    width: 100%;
+    height: 90px;
+    line-height: 90px;
+    background:cadetblue;
+    color:#fff;
+    font-size:30rpx;
+    padding:0 20px;
+    box-sizing: border-box;
+}
+.info{
+    display: flex;
+    margin-top:30px;
+    padding:0 20px;
+    box-sizing: border-box;
+
+}
+.info  .img{
+    width:200px;
+    height:270px;
+    border:1px solid #ccc;
+    padding:5px;
+    margin-right:10px;
+}
+.fs01{
+    width:400px;
+    line-height:64px;
+}
+.fs01 text{
+    color:green;
+    font-size:30rpx;
+}
+.fs01 .hui{
+    color:#ccc;
+}
+.fs01 .hei{
+    color:#333;
+}
+.fs01 view text{
+    margin-right:20px;
+}
+.fs02{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.ju{
+    font-size: 32rpx;
+}
+.img1{
+    width:100%;
+    height:100px;
+
+}
+.im image{
+    width: 70px;
+    height: 70px;
+}
+.imgss{
+    width: 100%;
+    height: 200px;
+    margin-top:20px;
+}
+.section{
+    position: relative;
+}
+.section text{
+    color:green;
+}
+.section .hei{
+    color:#000;
+    padding-left:10px;
+}
+.section .hui{
+    color:#ccc;
+    padding-left:10px;
+    
+}
+.list0{
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    top:50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.list1{
+     width: 100%;
+    height: 120px;
+    top:120px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+}
+.im{
+    margin:20px;
+
+}
+.im image{
+    margin:0 20px;
+}
+.icon-zuojiantou{
+    font-size:30px;
+}

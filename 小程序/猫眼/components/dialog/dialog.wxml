@@ -1,0 +1,9 @@
+   <view class="mask">
+      <view class="box">
+         <view class="closea" bindtap="handleClose">X</view>
+          <image src="{{item[0].img}}"></image>
+          <view>{{item[0].nm}}</view> 
+          <view>观众评分<text class="txt">{{item[0].showst}}</text></view>
+      </view>
+    
+   </view>

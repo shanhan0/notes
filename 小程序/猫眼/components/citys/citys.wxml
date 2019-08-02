@@ -1,0 +1,4 @@
+<view class="key">{{key}}</view>
+<view class="ul">
+  <view wx:for="{{data}}" wx:key="index" bindtap='handleClick' data-val="{{item}}">{{item}}</view>
+</view>

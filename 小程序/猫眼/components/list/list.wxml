@@ -1,0 +1,25 @@
+  <view class="info_one">
+          <image src="{{item.img}}"></image>
+          <view class="info_fs01">
+            <view class="name">{{item.nm}}</view>
+            <view class="ping">观众评<text class="num">9.4</text></view>
+              <view class="tor">
+                主演：{{item.star}}
+              </view>
+            <view class="bottom">
+              {{item.showInfo}}
+             </view>
+          </view>
+          <view class="info_fs02">
+          <!-- <bytic glo="{{data.globalReleased}}"></bytic> -->
+              <button wx:if="{{item.globalReleased}}" class="btn" type="warn" size="20">购票</button>
+            <button
+             wx:else 
+             class="btn1" 
+             type="warn" 
+             size="20"
+             bindtap="handleBtn"
+             data-id="{{item.id}}"
+             >预售</button>
+          </view>
+      </view>

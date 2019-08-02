@@ -1,0 +1,9 @@
+<view>
+  <input placeholder='请输入搜索的关键字' bindblur="search"></input>
+   <view class="section">
+         <block wx:for="{{ newArr}}" wx:key="index">
+        <list item="{{item}}" class="blo" bindmyEvent="getId"></list>
+     </block>
+   </view>
+
+</view>

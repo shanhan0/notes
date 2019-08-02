@@ -1,0 +1,106 @@
+/* pages/test4/test4.wxss */
+.wrapper{
+  width:100%;
+  height:100%;
+  background:#EBEBEB;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.top{
+  width:100%;
+  height:70rpx;
+line-height:70rpx;
+  background:#EBEBEB;
+  font-size:28rpx;
+  padding:0 20rpx;
+}
+.fs01{
+  width:100%;
+  height:100rpx;
+  background:#F5F5F5;
+  padding:0 20rpx;
+  margin-top:50rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.fs02{
+  display: flex;
+  padding-right:20rpx;
+  flex-direction: column;
+}
+.city{
+}
+.city text{
+  padding:4rpx 20rpx;
+  border:1px solid #ccc;
+  background:#fff;
+
+
+}
+.fs02 text{
+}
+.fs03{
+  width:100%;
+  height:70rpx;
+  font-size:30rpx;
+  line-height:70rpx;
+}
+
+.list{
+  width:100%;
+  height:auto;
+  margin-top:30rpx;
+  background:#F5F5F5;
+
+
+}
+.sec{
+height:1000rpx;
+}
+.fs04{
+  margin-top:20rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.fs04 .ina{
+  background:#fff;
+  border:1px solid #ccc;
+  padding:4rpx 20rpx;
+  width:140rpx;
+  height:60rpx;
+  margin:20rpx 20rpx;
+  text-align: center;
+
+}
+.fs05{
+  width:100%;
+  height:60rpx;
+  background:#EBEBEB;
+}
+.header{
+  width:100%;
+  height:50rpx;
+  background:#f7f7f7;
+  margin:20rpx;
+}
+.scroll {
+  
+}
+.fs01 .sc{
+  position: absolute;
+  right:20rpx;
+  top:800rpx;
+  width:50rpx;
+  display: flex;
+  flex-direction: column;
+  z-index:99999;
+  padding:0;
+}
+.fs01 .sc text{
+  /* margin:10rpx; */
+  text-align: center;
+  padding:0;
+
+
+}

@@ -1,0 +1,240 @@
+.index{
+    width: 100%;
+    height: 100%;
+    overflow-y:scroll;
+    position: relative;
+}
+.top{
+  width: 100%;
+  height:120rpx;
+  padding:20rpx;
+  box-sizing: border-box;
+  border:1px solid #ccc;
+}
+.topa{
+display: flex;
+align-items: center;
+}
+.topa .txt{
+    width: 100%;
+    height:300px;
+    display: flex;
+align-items: center;
+border:none;
+}
+.top_one{
+    width:100%;
+    height:100rpx;
+    background:cadetblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0 20rpx;
+    box-sizing: border-box;
+}
+.top_one view{
+display: flex;
+align-items: center;
+}
+.top_one view text{
+     margin:0 20rpx; 
+}
+.icon-hao1{
+    border:1px solid #fff;
+    border-radius:50%;
+    margin:0;padding:0;
+}
+.top_one text{
+    font-size:40rpx;
+    color:#fff;
+}
+.top_one .txt{
+    font-size:30rpx;
+}
+.top view{
+    font-size:30rpx;
+}
+.top text{
+    color:#ccc;
+    font-size:26rpx;
+}
+.list{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+   
+}
+.info{
+    display: flex;
+    flex-direction: column;
+     padding:0 20rpx;
+    box-sizing: border-box;
+}
+.info view{
+    margin-top:20rpx;
+}
+.info text{
+    display: flex;
+    justify-content: flex-end;
+    margin-top:20rpx;
+    color:green;
+}
+.fs01{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top:20rpx;
+    height:120rpx;
+    background: #f7f7f7;
+    border-top:1px solid #ccc;
+    position: relative;
+    
+}
+.fs01 view{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+.fs01 view image{
+    width: 40rpx;
+    height:40rpx;
+}
+.fs01 view text{
+    font-size:26rpx;
+    padding-top:10rpx;
+    color:#999;
+}
+.list_one{
+    border-bottom:30rpx solid #ccc;
+    position: relative;
+    
+}
+.textarea{
+    width: 100%;
+    position: relative;
+    margin-top:50rpx;
+    border-top:1px solid #ccc;
+    z-index:99999;
+    display: flex;
+    flex-direction: column;
+     padding:0 20rpx;
+    box-sizing: border-box;
+    display: none;
+    
+    
+}
+.iconfont{
+    margin-top:30rpx;
+    font-size:50rpx;
+    line-height:40rpx;
+    display: flex;
+    justify-content: flex-end;
+}
+.txt{
+  width: 86%;
+  height:200rpx;
+  border:1px solid #999;
+  display: flex;
+}
+.button{
+    display: flex;
+    justify-content: flex-end;
+}
+.btn{
+    width:160rpx;
+    height:70rpx;
+    margin:30rpx;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background: #eee;
+
+
+}
+.icon-xiala{
+    display: flex;
+    justify-content: center;
+    margin:20rpx 0;
+    color:#999;
+}
+ /* .fs01.on{
+    border:none;
+} */
+.placeholderStyle{
+    color:#ccc;
+    font-size:26rpx;
+}
+.sha{
+    display: flex;
+    align-items: center;
+    margin-top:20px;
+}
+.show{
+    display: block;
+}
+ .share{
+    border:0;
+    background: none;
+    position: static;
+    color:#999;
+   font-size: 26rpx;    
+   
+} 
+.box_info{
+    display: flex;
+    justify-content: space-between;
+    margin:30px 0;
+    padding:20px;
+    box-sizing: border-box;
+border-bottom:1px solid #ccc;
+}
+.autora{
+    color:green;
+    margin-bottom:20px;
+}
+.box_one{
+    font-size:26rpx;
+}
+.icon-xiala{
+    width: 100%;
+    /* border-top:1px solid #999; */
+}
+.times{
+    font-size: 26rpx;
+    color:#ccc;
+}
+.ha{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    overflow: hidden;
+}
+.box image{
+    width: 50px;
+    height: 50px;
+    border-radius:50%;
+    margin-right:20px;
+    border:1px solid #ccc;
+}
+.box_one{
+    display: flex;
+    flex-direction: column;
+}
+.love{}
+ 
+/* @keyframes move{
+  0%{
+    opacity: 1;
+    transform: translateY(100%);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(-100%);
+  }
+}
+.move{
+  animation: move 1s linear 0s forwards;
+} */

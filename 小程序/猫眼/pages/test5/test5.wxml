@@ -1,0 +1,51 @@
+
+<view class="wrapper">
+   <view class="list">
+    <navigator url="../test4/test4" open-type="navigate">
+      <view class="left">{{pos}}<text class="iconfont icon-lower-triangle"></text></view>
+    </navigator>
+    <!-- 正在上映，即将上映 -->
+    <view class="info">
+       <text bindtap="handleClick" data-index="0" class="{{flagTab==='0'?'active':null}}">正在上映</text>
+       <text bindtap="handleClick" data-index="1" class="{{flagTab==='1'?'active':null}}">即将上映</text>
+    </view>
+    <view class="iconfont icon-sousuo" bindtap="search"></view>
+   </view>
+  <!-- 内容区 -->
+  <view class="section">
+      <!--轮播-->
+    <scroll-view class="sc" scroll-y bindscrolltolower="scrolltolower">
+      <view class="swiper">
+          <swiper autoplay="false" interval="5000" duration="5000" circular="true">
+          <block  wx:for="{{imgUrls}}" wx:key="index">
+            <swiper-item>
+            <image src="{{item}}" class="slide-image" width="355" height="150" />
+          </swiper-item>
+          </block>
+      </swiper>
+      </view>
+  
+   <view class="fs01" class="{{flagTab==='0'?'show':'hide'}}">
+     <block wx:for="{{data}}" wx:key="index">
+        <list item="{{item}}" class="blo" bindmyEvent="getId"></list>
+     </block>
+   </view>
+<!-- //弹框 -->
+ <view >
+    <dialog 
+    wx:if="{{flag}}" 
+    item="{{idList}}" 
+    bindmyflag="getFlag">
+    </dialog>
+ </view>
+    </scroll-view>
+   
+
+   <view class="fs02" class="{{flagTab==='1'?'show':'hide'}}">
+   即将上映
+   </view>
+
+
+  </view>
+</view>
+
